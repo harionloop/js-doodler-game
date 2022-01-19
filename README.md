@@ -21,5 +21,10 @@ I made this to revive my java script
 ![Initial-1](/asset/appssI1.png)
 
 #### Final:
+
 ![Final-1](/asset/appssF0.png)
 ![Final-1](/asset/appssF1.png)
+
+## Gameplay 
+I should not do this lmao
+![Gameplay](/asset/Gameplay.mp4)
