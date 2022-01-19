@@ -6,7 +6,7 @@ I made this to revive my java script
 
 ##### clone this repo with `git clone`or download it
 ##### paste open the html and it should work 
-##### make sure 'style.css' & `app.js` are linked with `index.html`
+##### make sure `style.css` & `app.js` are linked with `index.html`
 
 ## Note:
 ##### This is not fully completed yet
@@ -25,5 +25,5 @@ I made this to revive my java script
 ![Final-1](/asset/appssF1.png)
 
 ## Gameplay 
-####I should not do this lmao 
+#### I should not do this lmao 
   ![Gameplay](/asset/Gameplay.gif)
