@@ -12,6 +12,7 @@ I made this to revive my java script
 ##### This is not fully completed yet
 ##### There are some glitches that need to be fixed
 ##### Restart function is not working correctly
+##### I don't own any image data used to style this app I downloaded them from google
 
 
 ## Screen-shots:
@@ -26,5 +27,5 @@ I made this to revive my java script
 ![Final-1](/asset/appssF1.png)
 
 ## Gameplay 
-I should not do this lmao
-![Gameplay](/asset/Gameplay.mp4)
+I should not do this lmao 
+  ![Gameplay](/asset/Gameplay.gif)
