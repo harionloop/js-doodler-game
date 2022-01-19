@@ -17,9 +17,9 @@ I made this to revive my java script
 ## Screen-shots:
 
 #### Initial:
-![Initial-1](/asset/appssI0.png)
+
 ![Initial-1](/asset/appssI1.png)
 
 #### Final:
-![Final-1](/asset/appssI0.png)
-![Final-1](/asset/appssI1.png)
+![Final-1](/asset/appssF0.png)
+![Final-1](/asset/appssF1.png)
