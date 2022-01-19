@@ -1,74 +1,99 @@
-.interface {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
     margin: 0;
     box-sizing: border-box;
+    padding: 0;
+}
+
+.interface {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    z-index: -1;
+    background-image: url(./images/bg.jpg);
 }
 
 .grid {
     width: 400px;
-    height: 550px;
-    filter: contrast(3);
+    height: 100%;
     background-image: url(./images/bg1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    border: black solid 3px;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+}
+
+.grid h2 {
     text-align: center;
-    font-size: 60px;
-    font-weight: 1000;
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    top: 40%;
+}
+
+.start-butt {
+    background-image: url(./images/start_butt.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    width: 163px;
+    height: 40px;
+    position: relative;
+    top: 70%;
+    left: 30px;
+    cursor: pointer;
+    transition: ease-in-out all 0.3s;
+}
+
+.restart-butt {
+    background-image: url(./images/restart_butt.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    width: 163px;
+    height: 40px;
+    position: relative;
+    top: 70%;
+    left: 30px;
+    cursor: pointer;
+    transition: ease-in-out all 0.3s;
+}
+
+.started {
+    visibility: hidden;
+}
+
+.start-butt:hover {
+    transform: scale(1.07);
+}
+
+.restart-butt:hover {
+    transform: scale(1.07);
 }
 
 .doodler {
     content: url(./images/doodler_fall.png);
     width: 65px;
     height: 65px;
-    opacity: 1;
     position: absolute;
-    z-index: 3;
+    filter: contrast(1.5);
 }
 
 .jumping_doodler {
     content: url(./images/doodler_jump.png);
-    z-index: 3;
-    opacity: 1;
+    filter: contrast(1.5);
 }
 
 .platform {
-    content: url(./images/plat4-removebg-preview.png);
+    filter: contrast(1.5);
+    content: url(./images/plat.png);
     background: none;
-    background-color: transparent;
     width: 75px;
     height: 20px;
     position: absolute;
-    opacity: 1;
-    z-index: 3;
-}
-
-.button {
-    border: solid 1px #ccc;
-    background-color: pink;
-    color: black;
-    font-weight: bold;
-}
-
-.activated {
-    display: none;
-}
-
-button:hover {
-    background-color: rgb(192, 70, 155);
-    color: rgb(2, 11, 19);
-}
-
-.restart {
-    display: none;
-}
-
-.restart-active {
-    display: initial;
 }

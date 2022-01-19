@@ -1,7 +1,8 @@
 const grid = document.querySelector('.grid');
 const doodler = document.createElement('div');
 const startButt = document.querySelector('button')
-const restartButt = document.querySelector('.restart')
+
+//variables 
 
 let isStarted = false;
 let doodlerLPosition = 50;
@@ -20,6 +21,9 @@ let doodlerLeftTime;
 let doodlerRightTime;
 let score = 0;
 
+//Doodler creation
+
+
 function createDoodler() {
     grid.appendChild(doodler);
     doodler.classList.add('doodler');
@@ -27,6 +31,8 @@ function createDoodler() {
     doodler.style.left = doodlerLPosition + 'px'
     doodler.style.bottom = doodlerBPosition + 'px'
 };
+
+//doodler functions 
 
 function doodlerJump() {
     isJumping = true
@@ -120,6 +126,9 @@ function moveUp() {
     clearInterval(doodlerLeftTime);
 };
 
+//creation of platforms
+
+
 class Platform {
     constructor(newPlatBottom) {
         this.bottom = newPlatBottom;
@@ -165,48 +174,49 @@ function movePlatforms() {
 };
 
 
-
+//game over function
 
 function gameOver() {
 
     isGameOver = true;
 
-    while (grid.firstChild) {
+    while (grid.firstChild && isGameOver) {
         grid.removeChild(grid.firstChild)
+
     }
-    grid.innerHTML = `Your Score is: ${score}`
+    grid.innerHTML = `<h2>Your Score is: ${score}</h2>
+        <button onClick=(start()) class="restart-butt"></button> `
 
 
     clearInterval(doodlerUpTime)
     clearInterval(doodlerDownTime)
     clearInterval(doodlerRightTime)
     clearInterval(doodlerLeftTime)
-        // startButt.classList.remove('activated')
-        // document.createElement('button').textContent = "Restart"
-    restartButt.classList.add('restart-active')
+    startButt.classList.remove("started")
+
 
 };
 
-function start() {
+//start game function
 
+
+function start() {
+    isGameOver = false;
     if (!isGameOver) {
         createPlatform()
         createDoodler()
         setInterval(movePlatforms, 50)
         doodlerJump()
         document.addEventListener('keyup', doodlerMovement)
+        startButt.classList.add("started")
+
     }
 }
 
-function reStart() {
-    gameOver = false;
-    document.removeChild()
-    start()
-
-}
 
 startButt.addEventListener('click', start)
-restartButt.addEventListener('click', reStart)
+
+
 
 
 
