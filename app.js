@@ -20,6 +20,7 @@ let isMovingLeft = false;
 let doodlerLeftTime;
 let doodlerRightTime;
 let score = 0;
+let moveValue = 7;
 
 //Doodler creation
 
@@ -93,7 +94,7 @@ function doodlerMovement(e) {
 
 
 function moveLeft() {
-    if (isMovingRight) {
+    if (!isMovingRight) {
         clearInterval(doodlerRightTime);
         isMovingRight = false;
     }
@@ -106,7 +107,7 @@ function moveLeft() {
 };
 
 function moveRight() {
-    if (isMovingLeft) {
+    if (!isMovingLeft) {
         clearInterval(doodlerLeftTime);
         isMovingLeft = false;
     }
@@ -156,7 +157,7 @@ function createPlatform() {
 function movePlatforms() {
     if (doodlerBPosition > 60) {
         platforms.forEach(plat => {
-            plat.bottom -= 5
+            plat.bottom -= moveValue
             let platVisual = plat.platVisual
             platVisual.style.bottom = plat.bottom + 'px'
 
@@ -165,7 +166,7 @@ function movePlatforms() {
                 firstPlatform.classList.remove('platform')
                 platforms.shift()
                 score++
-                console.log(platforms)
+
                 let newPlatform = new Platform(600)
                 platforms.push(newPlatform);
             }
@@ -182,26 +183,23 @@ function gameOver() {
 
     while (grid.firstChild && isGameOver) {
         grid.removeChild(grid.firstChild)
-
     }
     grid.innerHTML = `<h2>Your Score is: ${score}</h2>
-        <button onClick=(start()) class="restart-butt"></button> `
+         <button onClick=(restart()) class="restart-butt"></button>
+         <button onClick=(quitGame()) class="quit">Quit</button> `
 
 
     clearInterval(doodlerUpTime)
     clearInterval(doodlerDownTime)
     clearInterval(doodlerRightTime)
     clearInterval(doodlerLeftTime)
-    startButt.classList.remove("started")
-
-
 };
 
 //start game function
 
 
 function start() {
-    isGameOver = false;
+
     if (!isGameOver) {
         createPlatform()
         createDoodler()
@@ -216,9 +214,25 @@ function start() {
 
 startButt.addEventListener('click', start)
 
+// Restart Function 
 
 
+function restart() {
+
+    while (grid.firstChild) {
+        grid.replaceChildren
+    }
+    isStarted = false
+
+    score = 0;
+    platforms = [];
+    moveValue = 7;
+    start()
+}
 
 
+//Quit funciton
 
-//create a button for start
+function quitGame() {
+    setTimeout(window.close(), 5000)
+}
